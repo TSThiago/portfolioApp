@@ -11,5 +11,5 @@ export const ContactContainer = styled.View<ContactContainerProps>`
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: ${gray}
+    background-color: ${gray};
 `
