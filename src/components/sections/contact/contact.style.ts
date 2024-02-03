@@ -1,6 +1,6 @@
 import { ViewProps } from "react-native/Libraries/Components/View/ViewPropTypes";
 import styled from "styled-components/native";
-import { gray } from "../../../assets/colors/portfolioColors";
+import { gray } from "../../../../assets/colors/portfolioColors";
 
 interface ContactContainerProps extends ViewProps {
 

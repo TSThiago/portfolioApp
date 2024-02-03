@@ -7,7 +7,6 @@ interface BioInfosProps extends ViewProps {
 
 export const BioContainer = styled.View<ViewProps>`
     width: 100%;
-    height: 100%;
     align-items: center;
 `;
 
@@ -19,7 +18,7 @@ export const BioHeader = styled.View<BioInfosProps>`
 `;
 
 export const BioInfos = styled.View<ViewProps>`
-    margin: 20px;
+    margin: 28px;
     width: 90%;
     align-items: center
 `;

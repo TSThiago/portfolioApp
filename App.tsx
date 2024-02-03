@@ -1,14 +1,17 @@
 import { ScrollView } from "react-native";
 import { black } from "./assets/colors/portfolioColors";
-import Portfolio from './src/modules/portfolio/portfolio'
-import Bio from "./src/components/bio/Bio";
-import Contact from "./src/components/contact/Contact";
+import Bio from "./src/components/sections/bio/Bio";
+import Contact from "./src/components/sections/contact/Contact";
+import Skills from "./src/components/sections/skills/Skills";
+import Projects from "./src/components/sections/projects/Projects";
 
 const App = () => {
   return (
     <ScrollView style={{ backgroundColor: black }}>
       <Bio />
-      <Contact />
+      <Skills/>
+      {/* <Projects/> */}
+      {/* <Contact /> */}
     </ScrollView>
   )
 }

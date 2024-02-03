@@ -1,5 +1,5 @@
-import Bio from "../../components/bio/Bio"
-import Contact from "../../components/contact/Contact";
+import Bio from "../../components/sections/bio/Bio"
+import Contact from "../../components/sections/contact/Contact";
 
 const Portfolio = () => {
     return (
