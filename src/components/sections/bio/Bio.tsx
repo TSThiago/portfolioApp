@@ -5,8 +5,11 @@ import { BioContainer, BioHeader, BioInfos } from "./bio.style";
 import { Image, TouchableOpacity } from "react-native";
 import { Grayscale } from "react-native-color-matrix-image-filters";
 
+interface BioProps {
+    scrollButton: () => void;
+}
 
-const Bio = () => {
+const Bio = ({scrollButton} : BioProps ) => {
     return (
         <>
             <BioContainer>
@@ -20,11 +23,11 @@ const Bio = () => {
                     <ThisText color={white} type={TextTypes.HEADING_L}>Nice to meet you!</ThisText>
                     <ThisText color={white} type={TextTypes.HEADING_L}>I'm <ThisText textDecoration='underline' color={green} type={TextTypes.HEADING_L}>Thiago Shibanuma.</ThisText></ThisText>
                     <ThisText margin="20px 0" color={white}>Based in Brazil, I'm a front-end developer passionate about building mobile apps that users loves.</ThisText>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={scrollButton}>
                         <ThisText textDecoration="underline" color={green} type={TextTypes.HEADING_M}>CONTACT ME</ThisText>
                     </TouchableOpacity>
                 </BioInfos>
-                <Image style={{ position: 'absolute', left: -432, top: 84, zIndex: 0.2 }} source={require('../../../../assets/images/Rings.png')} />
+                <Image style={{ position: 'absolute', left: -432, top: 54, zIndex: 0.2 }} source={require('../../../../assets/images/Rings.png')} />
                 <Image style={{ position: 'absolute', left: 342, top: 254, zIndex: 0.2 }} source={require('../../../../assets/images/Oval.png')} />
             </BioContainer>
 
