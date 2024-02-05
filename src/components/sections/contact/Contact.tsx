@@ -12,7 +12,7 @@ import {
     SocialMediaSymbol
 } from "./contact.style";
 import Input from "../../input/Input";
-import { TouchableOpacity } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 
 const Contact = () => {
     return (
@@ -26,23 +26,24 @@ const Contact = () => {
                 <Input multiline={false} placeholder="Email" height="43px" />
                 <Input multiline={true} placeholder="Message" height="107px" />
             </ContactForm>
-            <FormButton>
+            <FormButton onPress={() => console.log('Send Message')}>
                 <ThisText color={green}>SEND MESSAGE</ThisText>
             </FormButton>
             <ContactFooter>
                 <ThisText color={white} type={TextTypes.HEADING_M} margin="30px auto 20px auto">thiago_shibanuma</ThisText>
             </ContactFooter>
             <SocialMediaContainer>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => console.log('Github')}>
                     <SocialMediaSymbol source={require('../../../../assets/images/Github.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => console.log('Frontend Mentor')}>
                     <SocialMediaSymbol source={require('../../../../assets/images/FrontEndMentor.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => console.log('Linkedn')}>
                     <SocialMediaSymbol source={require('../../../../assets/images/LinkedIn.png')} />
                 </TouchableOpacity>
             </SocialMediaContainer>
+            <Image style={{position: 'absolute', left: -362, top: 400}} source={require('../../../../assets/images/Rings.png')}/>
         </ContactContainer>
     );
 };

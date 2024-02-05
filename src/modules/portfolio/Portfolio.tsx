@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ScrollView } from "react-native";
+import { Image, ScrollView } from "react-native";
 import { black } from "../../../assets/colors/portfolioColors";
 import Bio from "../../components/sections/bio/Bio"
 import Contact from "../../components/sections/contact/Contact";
@@ -17,8 +17,9 @@ const Portfolio = () => {
       <ScrollView ref={(ref => setRef(ref))} style={{ backgroundColor: black }}>
         <Bio scrollButton={EndButtonHandler} />
         <Skills />
-        <Projects/>
+        <Projects scrollButton={EndButtonHandler}/>
         <Contact />
+        <Image style={{position: 'absolute', right: -362, top: 1300}} source={require('../../../assets/images/Rings.png')}/>
       </ScrollView>
     )
 }
