@@ -13,6 +13,8 @@ import {
 } from "./contact.style";
 import Input from "../../input/Input";
 import { Image, TouchableOpacity } from "react-native";
+import openLinkInBrowser from "../../../shared/functions/OpenLinkInBrowser/openLinkInBrowser";
+import { FrontEndMentorURL, GithubURL, LinkedinURL } from "../../../shared/links/Urls";
 
 const Contact = () => {
     return (
@@ -33,13 +35,13 @@ const Contact = () => {
                 <ThisText color={white} type={TextTypes.HEADING_M} margin="30px auto 20px auto">thiago_shibanuma</ThisText>
             </ContactFooter>
             <SocialMediaContainer>
-                <TouchableOpacity onPress={() => console.log('Github')}>
+                <TouchableOpacity onPress={() => openLinkInBrowser(GithubURL)}>
                     <SocialMediaSymbol source={require('../../../../assets/images/Github.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => console.log('Frontend Mentor')}>
+                <TouchableOpacity onPress={() => openLinkInBrowser(FrontEndMentorURL)}>
                     <SocialMediaSymbol source={require('../../../../assets/images/FrontEndMentor.png')} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => console.log('Linkedn')}>
+                <TouchableOpacity onPress={() => openLinkInBrowser(LinkedinURL)}>
                     <SocialMediaSymbol source={require('../../../../assets/images/LinkedIn.png')} />
                 </TouchableOpacity>
             </SocialMediaContainer>

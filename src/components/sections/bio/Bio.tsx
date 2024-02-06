@@ -2,30 +2,17 @@ import ThisText from "../../text/ThisText"
 import { gray, green, white } from "../../../../assets/colors/portfolioColors"
 import { TextTypes } from "../../text/textTypes";
 import { BioContainer, BioHeader, BioInfos } from "./bio.style";
-import { Image, TouchableOpacity, Linking } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 import { Grayscale } from "react-native-color-matrix-image-filters";
 import { SocialMediaContainer, SocialMediaSymbol } from "../contact/contact.style";
-import { GithubURL } from "../../../shared/links/Urls";
+import { FrontEndMentorURL, GithubURL, LinkedinURL } from "../../../shared/links/Urls";
+import openLinkInBrowser from "../../../shared/functions/OpenLinkInBrowser/openLinkInBrowser";
 
 interface BioProps {
     scrollButton: () => void;
 }
 
 const Bio = ({ scrollButton }: BioProps) => {
-
-    const openLinkInBrowser = (url: string) => {
-        Linking.canOpenURL(url).then((supported) => {
-            if (supported) {
-                console.log("Opening URL:", url);
-                Linking.openURL(url);
-            } else {
-                console.log("No supported URL:", url);
-            }
-        }).catch((error) => {
-            console.error("Error to verify id the URL is open:", error);
-        });
-    };
-
 
     return (
         <>
@@ -36,10 +23,10 @@ const Bio = ({ scrollButton }: BioProps) => {
                         <TouchableOpacity onPress={() => openLinkInBrowser(GithubURL)}>
                             <SocialMediaSymbol source={require('../../../../assets/images/Github.png')} />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => openLinkInBrowser(FrontEndMentorURL)}>
                             <SocialMediaSymbol source={require('../../../../assets/images/FrontEndMentor.png')} />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => openLinkInBrowser(LinkedinURL)}>
                             <SocialMediaSymbol source={require('../../../../assets/images/LinkedIn.png')} />
                         </TouchableOpacity>
                     </SocialMediaContainer>
