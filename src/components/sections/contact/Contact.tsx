@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { green, white } from "../../../../assets/colors/portfolioColors";
 import ThisText from "../../text/ThisText";
 import { TextTypes } from "../../text/textTypes";
@@ -12,11 +12,23 @@ import {
     SocialMediaSymbol
 } from "./contact.style";
 import Input from "../../input/Input";
-import { Image, TouchableOpacity } from "react-native";
+import { Image, NativeSyntheticEvent, TextInputChangeEventData, TouchableOpacity } from "react-native";
 import openLinkInBrowser from "../../../shared/functions/OpenLinkInBrowser/openLinkInBrowser";
 import { FrontEndMentorURL, GithubURL, LinkedinURL } from "../../../shared/links/Urls";
+import useEmail from "./hooks/useEmail";
+
 
 const Contact = () => {
+    const {
+        name,
+        email,
+        message,
+        handleOnChangeName,
+        handleOnChangeEmail,
+        handleOnChangeMessage,
+        sendEmail
+    } = useEmail();
+
     return (
         <ContactContainer>
             <ContactHeader>
@@ -24,11 +36,11 @@ const Contact = () => {
                 <ThisText color={white}>I would love to hear about your project and how I could help. Please fill in the form, and I'll get back to you as soon as possible.</ThisText>
             </ContactHeader>
             <ContactForm>
-                <Input multiline={false} placeholder="Name" height="43px" />
-                <Input multiline={false} placeholder="Email" height="43px" />
-                <Input multiline={true} placeholder="Message" height="107px" />
+                <Input value={name} onChange={handleOnChangeName} multiline={false} placeholder="Name" height="43px" />
+                <Input value={email} onChange={handleOnChangeEmail} multiline={false} placeholder="Email" height="43px" />
+                <Input value={message} onChange={handleOnChangeMessage} multiline={true} placeholder="Message" height="107px" />
             </ContactForm>
-            <FormButton onPress={() => console.log('Send Message')}>
+            <FormButton onPress={sendEmail}>
                 <ThisText color={green}>SEND MESSAGE</ThisText>
             </FormButton>
             <ContactFooter>
